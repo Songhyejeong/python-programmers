@@ -1,4 +1,4 @@
-Lv1 : 연습문제 1 약수의 합 
+1. Lv1 : 연습문제 1 약수의 합 
 def solution(n):
     answer = 0
     for i in range(1,n+1):
@@ -6,3 +6,67 @@ def solution(n):
             answer += i
     return answer
 
+
+
+2. x만큼 간격이 있는 n개의 숫자
+def solution(x, n):
+    answer = []
+    a = x
+    for i in range(n):
+        answer.append(int(a))
+        a = x + a
+    return answer
+
+
+3. 하샤드 수
+def solution(x):
+    a = list()
+    y = x
+    sum = 0
+    while(y >=1):
+        a.append(y%10)
+        y = y/10
+    i = 0
+    while(i < len(a)):
+        sum = sum + a[i]
+        i+=1
+    if(x% sum == 0):
+        answer = True
+    else:
+        answer = False
+    return answer
+
+
+
+4. 짝수와 홀수
+def solution(num):
+    answer = ''
+    if num % 2==0:
+        answer = "Even"
+    else:
+        answer = "Odd"
+    return answer
+
+5. 정수 제곱근 판별
+def solution(n):
+    sqrt = n**0.5
+    if int(sqrt) == sqrt:
+          return (sqrt+1)**2
+    return -1
+6. 자연수 뒤집어 배열로 만들기
+def solution(n):
+    answer = []
+    str_n =str(n)
+    rev = reversed(str_n)
+    for i in rev:
+        answer.append(int(i))
+    return answer
+
+7. 문자열을 정수로 바꾸기
+def solution(s):
+    answer = int(s)
+    return answer
+
+
+        answer = False
+    return answer
