@@ -1,4 +1,4 @@
-1. Lv1 : 연습문제 1 약수의 합 
+# Lv1 : 연습문제 1 약수의 합 
 def solution(n):
     answer = 0
     for i in range(1,n+1):
@@ -8,7 +8,7 @@ def solution(n):
 
 
 
-2. x만큼 간격이 있는 n개의 숫자
+# x만큼 간격이 있는 n개의 숫자
 def solution(x, n):
     answer = []
     a = x
@@ -18,7 +18,7 @@ def solution(x, n):
     return answer
 
 
-3. 하샤드 수
+# 하샤드 수
 def solution(x):
     a = list()
     y = x
@@ -38,7 +38,7 @@ def solution(x):
 
 
 
-4. 짝수와 홀수
+# 짝수와 홀수
 def solution(num):
     answer = ''
     if num % 2==0:
@@ -47,13 +47,13 @@ def solution(num):
         answer = "Odd"
     return answer
 
-5. 정수 제곱근 판별
+# 정수 제곱근 판별
 def solution(n):
     sqrt = n**0.5
     if int(sqrt) == sqrt:
           return (sqrt+1)**2
     return -1
-6. 자연수 뒤집어 배열로 만들기
+#자연수 뒤집어 배열로 만들기
 def solution(n):
     answer = []
     str_n =str(n)
@@ -62,11 +62,75 @@ def solution(n):
         answer.append(int(i))
     return answer
 
-7. 문자열을 정수로 바꾸기
+#문자열을 정수로 바꾸기
 def solution(s):
     answer = int(s)
     return answer
 
 
         answer = False
+    return answer
+
+
+
+#sort함수 정리
+#오름차순 : 리스트.sort()
+#내림차순: 리스트.sort(reverse = True)
+#key(문자 길이)이용하여 정렬 : 리스트.sort(key = len)
+#python join 함수 : 리스트를 문자열로 바꿔준다.
+#arr = ['hello','how','are','you']
+#result  = ''.join(arr)
+#->hellohowareyou
+#result = ','.join(arr) ->hello,how,are,you
+def solution(n):
+    answer= 0
+    answer = int(''.join(sorted(list(str(n)),reverse = True))
+def solution(n):
+    answer = 0
+    list_n= list(n)
+    list_n.sort(reverse =True)
+    answer = ''.join(list_n)
+    return answer
+#두 정수 사이의 합
+def solution(a, b):
+    answer = 0
+    if a <b:
+        for i in range(a,b+1):
+            answer = answer+i
+    else:
+        for i in range(b,a+1):
+            answer = answer+i
+    return answer
+#콜라츠 추측
+def solution(a, b):
+    answer = 0
+    if a <b:
+        for i in range(a,b+1):
+            answer = answer+i
+    else:
+        for i in range(b,a+1):
+            answer = answer+i
+    return answer
+#서울에서 김서방 찾기
+def solution(seoul):
+    answer = ''
+    a =0
+    for i in range(len(seoul)):
+        if seoul[i] == 'Kim':
+            a =i
+            break
+    answer = '김서방은 %d에 있다'%a
+    return answer
+
+#나누어 떨어지는 숫자 배열
+def solution(arr, divisor):
+    answer = []
+    cnt =0
+    for i in range(len(arr)):
+        if arr[i]%divisor == 0:
+            answer.append(arr[i])
+            cnt+=1
+    if cnt == 0:
+        answer.append(-1)
+    answer.sort()
     return answer
